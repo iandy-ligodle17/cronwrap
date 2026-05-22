@@ -1,0 +1,15 @@
+{
+  "name": "cronwrap",
+  "version": "1.0.0",
+  "description": "Lightweight wrapper to add logging and failure alerts to cron jobs",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": ["cron", "logging", "alerts", "wrapper"],
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
