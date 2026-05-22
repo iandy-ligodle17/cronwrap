@@ -3,6 +3,10 @@
 /**
  * Basic usage example for cronwrap.
  * In a real project, you'd schedule `wrappedSyncData` with node-cron or similar.
+ *
+ * Example with node-cron:
+ *   const cron = require('node-cron');
+ *   cron.schedule('* * * * *', wrappedSyncData); // runs every minute
  */
 
 const cronwrap = require('../index');
