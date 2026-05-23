@@ -15,6 +15,14 @@ function discordNotifier(webhookUrl, message, options = {}) {
       return reject(new Error('Discord webhook URL is required'));
     }
 
+    if (!message) {
+      return reject(new Error('Message is required'));
+    }
+
+    if (message.length > 2000) {
+      return reject(new Error(`Discord message exceeds 2000 character limit (got ${message.length})`));
+    }
+
     const payload = JSON.stringify({
       content: message,
       username: options.username || 'cronwrap',
