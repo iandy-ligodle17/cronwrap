@@ -1,5 +1,3 @@
-'use strict';
-
 const { slackNotifier } = require('./slack');
 const { emailNotifier } = require('./email');
 const { webhookNotifier } = require('./webhook');
@@ -10,6 +8,7 @@ const { discordNotifier } = require('./discord');
 const { teamsNotifier } = require('./teams');
 const { smsNotifier } = require('./sms');
 const { victoropsNotifier } = require('./victorops');
+const { datadogNotifier } = require('./datadog');
 
 module.exports = {
   slackNotifier,
@@ -22,4 +21,5 @@ module.exports = {
   teamsNotifier,
   smsNotifier,
   victoropsNotifier,
+  datadogNotifier,
 };
