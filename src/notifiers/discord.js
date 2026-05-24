@@ -23,18 +23,22 @@ function discordNotifier(webhookUrl, message, options = {}) {
       return reject(new Error(`Discord message exceeds 2000 character limit (got ${message.length})`));
     }
 
-    const payload = JSON.stringify({
-      content: message,
-      username: options.username || 'cronwrap',
-      avatar_url: options.avatarUrl || undefined,
-    });
-
     let url;
     try {
       url = new URL(webhookUrl);
     } catch (e) {
       return reject(new Error('Invalid Discord webhook URL'));
     }
+
+    if (url.protocol !== 'https:') {
+      return reject(new Error('Discord webhook URL must use HTTPS'));
+    }
+
+    const payload = JSON.stringify({
+      content: message,
+      username: options.username || 'cronwrap',
+      avatar_url: options.avatarUrl || undefined,
+    });
 
     const requestOptions = {
       hostname: url.hostname,
