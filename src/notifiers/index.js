@@ -1,3 +1,4 @@
+const { googlechatNotifier } = require('./googlechat');
 const { slackNotifier } = require('./slack');
 const { emailNotifier } = require('./email');
 const { webhookNotifier } = require('./webhook');
@@ -9,8 +10,12 @@ const { teamsNotifier } = require('./teams');
 const { smsNotifier } = require('./sms');
 const { victoropsNotifier } = require('./victorops');
 const { datadogNotifier } = require('./datadog');
+const { newrelicNotifier } = require('./newrelic');
+const { snsNotifier } = require('./sns');
+const { splunkNotifier } = require('./splunk');
 
 module.exports = {
+  googlechatNotifier,
   slackNotifier,
   emailNotifier,
   webhookNotifier,
@@ -22,4 +27,7 @@ module.exports = {
   smsNotifier,
   victoropsNotifier,
   datadogNotifier,
+  newrelicNotifier,
+  snsNotifier,
+  splunkNotifier,
 };
