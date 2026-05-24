@@ -1,4 +1,7 @@
-const { googlechatNotifier } = require('./googlechat');
+/**
+ * Notifiers index — export all available notifiers
+ */
+
 const { slackNotifier } = require('./slack');
 const { emailNotifier } = require('./email');
 const { webhookNotifier } = require('./webhook');
@@ -13,9 +16,10 @@ const { datadogNotifier } = require('./datadog');
 const { newrelicNotifier } = require('./newrelic');
 const { snsNotifier } = require('./sns');
 const { splunkNotifier } = require('./splunk');
+const { googlechatNotifier } = require('./googlechat');
+const { mattermostNotifier } = require('./mattermost');
 
 module.exports = {
-  googlechatNotifier,
   slackNotifier,
   emailNotifier,
   webhookNotifier,
@@ -30,4 +34,6 @@ module.exports = {
   newrelicNotifier,
   snsNotifier,
   splunkNotifier,
+  googlechatNotifier,
+  mattermostNotifier,
 };
